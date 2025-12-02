@@ -1,12 +1,11 @@
 import java.util.Scanner;
 
 public class SistemaGestionTrabajadores {
-    // Arreglos paralelos para almacenar datos de hasta 3 trabajadores
     static String[] nombres = new String[3];
     static int[] claves = new int[3];
     static double[] sueldos = new double[3];
     static int[] horasTrabajadas = new int[3];
-    static int contadorTrabajadores = 0; // Contador de trabajadores registrados
+    static int contadorTrabajadores = 0;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -15,7 +14,7 @@ public class SistemaGestionTrabajadores {
         do {
             mostrarMenu();
             opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -41,7 +40,6 @@ public class SistemaGestionTrabajadores {
         scanner.close();
     }
 
-    // Método para mostrar el menú
     public static void mostrarMenu() {
         System.out.println("===== SISTEMA DE GESTIÓN DE TRABAJADORES =====");
         System.out.println("1. Alta de trabajadores");
@@ -53,7 +51,6 @@ public class SistemaGestionTrabajadores {
         System.out.print("Seleccione una opción: ");
     }
 
-    // Método para dar de alta trabajadores
     public static void altaTrabajadores(Scanner scanner) {
         if (contadorTrabajadores >= 3) {
             System.out.println("No se pueden registrar más de 3 trabajadores.");
@@ -69,13 +66,12 @@ public class SistemaGestionTrabajadores {
         sueldos[contadorTrabajadores] = scanner.nextDouble();
         System.out.print("Horas trabajadas: ");
         horasTrabajadas[contadorTrabajadores] = scanner.nextInt();
-        scanner.nextLine(); // Consumir el salto de línea
+        scanner.nextLine();
 
         contadorTrabajadores++;
         System.out.println("Trabajador registrado exitosamente.");
     }
 
-    // Método para consultas generales (mostrar todos los trabajadores)
     public static void consultasGenerales() {
         if (contadorTrabajadores == 0) {
             System.out.println("No hay trabajadores registrados.");
@@ -93,7 +89,6 @@ public class SistemaGestionTrabajadores {
         }
     }
 
-    // Método para consultas por clave
     public static void consultasPorClave(Scanner scanner) {
         System.out.print("Ingrese la clave del trabajador: ");
         int claveBuscada = scanner.nextInt();
@@ -116,7 +111,6 @@ public class SistemaGestionTrabajadores {
         }
     }
 
-    // Método para consultas por nombre
     public static void consultasPorNombre(Scanner scanner) {
         System.out.print("Ingrese el nombre del trabajador: ");
         String nombreBuscado = scanner.nextLine();
@@ -139,8 +133,8 @@ public class SistemaGestionTrabajadores {
         }
     }
 
-    // Método para salir del programa
     public static void salirPrograma() {
         System.out.println("Gracias por usar el Sistema de Gestión de Trabajadores. ¡Hasta luego!");
     }
 }
+
